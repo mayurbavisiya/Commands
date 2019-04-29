@@ -1,0 +1,41 @@
+Netflix Eureka - registery Server
+Which is used as a service discovery
+
+
+Note :  1 and 2 are require as they are based
+
+Add depedencies management: 
+spring-cloud-dependencies, 
+version: Finchley.M9
+
+1) Config - server
+Depen :  spring-cloud-config-server
+
+main class : 
+	@SpringBootApplication
+	@EnableConfigServer
+
+2) Discover Service 
+Depen : spring-cloud-starter-netflix-eureka-server
+		spring-cloud-starter-config
+		
+main class :
+	@SpringBootApplication
+	@EnableEurekaServer
+
+
+3) Create Microservice
+
+Depen : 
+	spring-cloud-starter-netflix-eureka-client
+	
+	
+	spring-cloud-starter-config
+	spring-boot-starter-web
+	springfox-swagger2
+
+main class : 
+	@SpringBootApplication
+	@EnableDiscoveryClient
+	@EnableSwagger2
+

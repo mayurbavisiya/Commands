@@ -1,0 +1,17 @@
+Create Dockerfile
+
+FROM openjdk:8   								(Mention name of platform for application with version, It will download image from Dockerhub)
+ADD target/jarName.jar  path/jarName.jar		(It could be jar,war whatever, Second argument is where you want to copy jar in Docker Directory)
+EXPOSE 8085  									(On which port you wann run)
+ENTRYPOINT ["java","-jar","jarName.jar"]		(Mentioned command to run that jar)
+
+
+
+
+Open Terminal on project Directory
+
+docker build -f Dockerfile -t dockerspringboot .   (It will read Dockerfile from project dir and execute commnd mentioned in it)
+
+docker images  									   (List all images)
+
+docker run -p 8085:8085 dockerspringboot		   (run application on 8085)
